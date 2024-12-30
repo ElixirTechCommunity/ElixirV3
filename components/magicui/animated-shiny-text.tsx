@@ -33,7 +33,6 @@ const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
         className
       )}
       href={link}
-      // target='_blank'
     >
       {children}
     </a>
