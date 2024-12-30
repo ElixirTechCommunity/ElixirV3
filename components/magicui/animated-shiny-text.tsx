@@ -8,7 +8,12 @@ interface AnimatedShinyTextProps {
   link?: string;
 }
 
-const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({ children, className, shimmerWidth = 100, link = "#" }) => {
+const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
+  children,
+  className,
+  shimmerWidth = 100,
+  link = "#",
+}) => {
   return (
     <a
       style={
@@ -25,9 +30,10 @@ const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({ children, className, sh
         // Shimmer gradient
         "bg-gradient-to-r from-transparent via-black/80 via-50% to-transparent  dark:via-white/80",
 
-        className,
+        className
       )}
       href={link}
+      // target='_blank'
     >
       {children}
     </a>
