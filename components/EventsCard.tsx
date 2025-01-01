@@ -9,7 +9,6 @@ export interface EventsCardProps {
   eventName: string;
   eventImage: string;
   clubName: string;
-  clubImage: string;
   deadline: Date | string;
   formLink: string;
 }
@@ -26,7 +25,6 @@ export default function EventsCard({
   eventName,
   eventImage,
   clubName,
-  clubImage,
   deadline,
   formLink,
 }: EventsCardProps): JSX.Element {
@@ -36,19 +34,7 @@ export default function EventsCard({
         <div className='flex justify-between items-center'>
           <CardItem translateZ='50' className='text-xl font-bold text-neutral-600 dark:text-white'>
             {title}
-          </CardItem>
-          {/* Event organizing club logo */}
-          <CardItem translateZ='50' className='text-neutral-500 dark:text-white'>
-            <div className='flex items-center gap-3'>
-              <Image
-                src={clubImage}
-                height={25}
-                width={25}
-                className='rounded-full object-cover aspect-[1/1] border-2 p-0 border-white ml-3'
-                alt={clubName}
-              />
-            </div>
-          </CardItem>
+          </CardItem>      
         </div>
         <CardItem translateZ='100' className='my-4 self-center justify-self-center'>
           <Image
