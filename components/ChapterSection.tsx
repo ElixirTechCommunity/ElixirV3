@@ -13,12 +13,13 @@ const ChapterSection = () => {
       <div className='flex flex-wrap items-center justify-center p-4 gap-20 mt-10'>
         {Chapters.map((item, idx) => (
           <div className='h-auto w-64 flex items-center justify-center' key={idx}>
-            <PinContainer title={item.title} href={item.link}>
+            <a href={item.link} target="_blank"><PinContainer title={item.title} href={item.link}>
               <div
                 className={`flex basis-full flex-col p-4 tracking-tight text-slate-100/50 sm:basis-1/2 ${
                   idx == 1 ? "md:w-[18rem] md:h-[22rem] w-[16rem] h-[20rem]" : " w-[16rem] h-[20rem]"
                 }`}
               >
+                  
                 <h3 className='max-w-xs !pb-2 !m-0 font-normal  text-base text-slate-100'>{item.title}</h3>
                 <div className='text-sm !m-0 !p-0 font-normal'>
                   <span className='text-slate-500 '>{item.des}</span>
@@ -33,8 +34,9 @@ const ChapterSection = () => {
                   />
                 </div>
               </div>
-            </PinContainer>
+            </PinContainer></a>
           </div>
+          
         ))}
       </div>
     </div>

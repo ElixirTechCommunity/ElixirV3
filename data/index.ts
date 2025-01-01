@@ -94,7 +94,7 @@ export const Chapters = [
     des: "GDSC ABESEC fosters learning, collaboration, and personal growth, exploring new technologies and exchanging knowledge for success.",
     img: "/gdscThumbnail.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://www.instagram.com/gdsc.abesec/",
+    link: "https://www.instagram.com/gdg.abesec/",
   },
 ];
 
