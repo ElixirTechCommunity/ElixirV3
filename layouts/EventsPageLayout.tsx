@@ -13,6 +13,18 @@ type Event = {
   form_link: string;
 };
 
+const setClubImage = (club: string): string => {
+  if (club === "GFG") {
+    return "/clubImageGFG.png";
+  } else if (club === "CC") {
+    return "/clubImageCC.png";
+  } else if (club === "GDSC") {
+    return "/clubImageGDSC.png";
+  } else {
+    return "https://via.placeholder.com/25";
+  }
+};
+
 const EventsPageLayout = () => {
   const events = useSelector((store: any) => store?.event?.events);
   useEventApi();
@@ -30,7 +42,7 @@ const EventsPageLayout = () => {
               eventName={event.name}
               eventImage={event.img_link}
               clubName={event.club}
-              clubImage='https://via.placeholder.com/25'
+              clubImage={setClubImage(event.club)}
               deadline={event.date}
               formLink={event.form_link}
             />
