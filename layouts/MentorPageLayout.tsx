@@ -11,7 +11,7 @@ const MentorPageLayout = () => {
   return (
     <div className='pt-20 relative z-10'>
       <div className='flex flex-col items-center justify-center'>
-        <PageHeading smallHeading='Connect with Mentors' longHeading='REACH OUT FOR GUIDANCE' />
+        <PageHeading longHeading='REACH OUT FOR GUIDANCE' />
         {mentorData.length > 0 && <SearchBar setMentorData={setMentorData} mentors={mentorData} />}
         <div className='flex flex-wrap items-center justify-center' style={{ gap: "80px" }}>
           {mentorData.map((mentor, idx) => (
