@@ -13,6 +13,16 @@ type Event = {
   form_link: string;
 };
 
+const clubImages: Record<string, string> = {
+  GFG: "/clubImageGFG.png",
+  CC: "/clubImageCC.png",
+  GDSC: "/clubImageGDSC.png",
+};
+
+const setClubImage = (club: string): string => {
+  return clubImages[club] || "https://via.placeholder.com/25";
+};
+
 const EventsPageLayout = () => {
   const events = useSelector((store: any) => store?.event?.events);
   useEventApi();
@@ -30,7 +40,7 @@ const EventsPageLayout = () => {
               eventName={event.name}
               eventImage={event.img_link}
               clubName={event.club}
-              clubImage='https://via.placeholder.com/25'
+              clubImage={setClubImage(event.club)}
               deadline={event.date}
               formLink={event.form_link}
             />
