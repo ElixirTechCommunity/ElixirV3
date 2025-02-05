@@ -13,16 +13,14 @@ type Event = {
   form_link: string;
 };
 
+const clubImages: Record<string, string> = {
+  GFG: "/clubImageGFG.png",
+  CC: "/clubImageCC.png",
+  GDSC: "/clubImageGDSC.png",
+};
+
 const setClubImage = (club: string): string => {
-  if (club === "GFG") {
-    return "/clubImageGFG.png";
-  } else if (club === "CC") {
-    return "/clubImageCC.png";
-  } else if (club === "GDSC") {
-    return "/clubImageGDSC.png";
-  } else {
-    return "https://via.placeholder.com/25";
-  }
+  return clubImages[club] || "https://via.placeholder.com/25";
 };
 
 const EventsPageLayout = () => {
