@@ -20,7 +20,7 @@ const EventsPageLayout = () => {
   return (
     <div className='pt-20 relative z-10 '>
       <div className='flex flex-col items-center justify-center relative'>
-        <PageHeading smallHeading='Our Events' longHeading="THAT'S HOW WE ROLL!" />
+        <PageHeading  longHeading="THAT'S HOW WE ROLL!" />
         <div className='flex flex-wrap justify-center items-stretch gap-16 pt-10'>
           {events?.map((event: Event) => (
             <EventsCard
