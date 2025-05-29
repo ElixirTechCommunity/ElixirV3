@@ -26,13 +26,13 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
-        <link rel='icon' href='/jsm-logo.png' sizes='any' />
+        <link rel='icon' href='/public/jsm-logo.webp' sizes='any' />
         <meta property='og:title' content='Elixir Tech Community' />
         <meta
           property='og:description'
           content='Elixir fosters a collaborative tech community dedicated to comprehensive learning, offering a supportive environment for growth and innovation.'
         />
-        <meta property='og:image' content='/HomeScreen.png' />
+        <meta property='og:image' content='/public/HomeScreen.webp' />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>

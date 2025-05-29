@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { sampleArcs } from "@/constants/sampleArcs";
 import PageHeading from "./PageHeading";
 
 const World = dynamic(() => import("./ui/Globe").then((m) => m.World), {
   ssr: false,
+  loading: () => <div className="text-white text-sm">Loading globe...</div>,
 });
 
 export function GlobeSection() {

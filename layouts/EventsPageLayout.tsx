@@ -1,5 +1,8 @@
 "use client";
-import EventsCard from "@/components/EventsCard";
+
+import dynamic from "next/dynamic";
+const EventsCard = dynamic(() => import("@/components/EventsCard"));
+
 import PageHeading from "@/components/PageHeading";
 import useEventApi from "@/hooks/useEventApi";
 import { useSelector } from "react-redux";
@@ -18,10 +21,10 @@ const EventsPageLayout = () => {
   useEventApi();
 
   return (
-    <div className='pt-20 relative z-10 '>
-      <div className='flex flex-col items-center justify-center relative'>
-        <PageHeading  longHeading="THAT'S HOW WE ROLL!" />
-        <div className='flex flex-wrap justify-center items-stretch gap-16 pt-10'>
+    <div className="pt-20 relative z-10 ">
+      <div className="flex flex-col items-center justify-center relative">
+        <PageHeading longHeading="THAT'S HOW WE ROLL!" />
+        <div className="flex flex-wrap justify-center items-stretch gap-16 pt-10">
           {events?.map((event: Event) => (
             <EventsCard
               key={event.id}
@@ -30,7 +33,7 @@ const EventsPageLayout = () => {
               eventName={event.name}
               eventImage={event.img_link}
               clubName={event.club}
-              clubImage='https://via.placeholder.com/25'
+              clubImage="https://via.placeholder.com/25"
               deadline={event.date}
               formLink={event.form_link}
             />

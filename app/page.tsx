@@ -1,6 +1,6 @@
 "use client";
 import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
+// import Grid from "@/components/Grid";
 import Testimonials from "@/components/Testimonials";
 import ChapterSection from "@/components/ChapterSection";
 import { GlobeSection } from "@/components/GlobeSection";
@@ -18,7 +18,7 @@ const Home = () => {
         <Image src={LogoHero} height={300} width={300} alt='tect' className='rounded-md' />
       </motion.div>
       <Hero />
-      <Grid />
+      {/* <Grid /> */}
       <ChapterSection />
       <Testimonials />
       <GlobeSection />
