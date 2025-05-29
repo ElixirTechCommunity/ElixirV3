@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -47,9 +48,15 @@ export const InfiniteMovingCards = ({
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
-        containerRef.current.style.setProperty("--animation-direction", "forwards");
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "forwards"
+        );
       } else {
-        containerRef.current.style.setProperty("--animation-direction", "reverse");
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "reverse"
+        );
       }
     }
   };
@@ -70,7 +77,7 @@ export const InfiniteMovingCards = ({
       className={cn(
         // max-w-7xl to w-screen
         "scroller relative z-20 w-screen overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className,
+        className
       )}
     >
       <ul
@@ -79,7 +86,7 @@ export const InfiniteMovingCards = ({
           // change gap-16
           " flex min-w-full shrink-0 gap-16 py-4 w-max flex-nowrap",
           start && "animate-scroll ",
-          pauseOnHover && "hover:[animation-play-state:paused]",
+          pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
@@ -93,7 +100,8 @@ export const InfiniteMovingCards = ({
               //   add these two
               //   you can generate the color from here https://cssgradient.io/
               background: "rgb(4,7,29)",
-              backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+              backgroundColor:
+                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
             }}
             // change to idx cuz we have the same name
             key={idx}
@@ -110,17 +118,26 @@ export const InfiniteMovingCards = ({
               <div className='relative z-20 mt-6 flex flex-row items-center'>
                 {/* add this div for the profile img */}
                 <div className='me-3'>
-                  <img
-                    src={"https://res.cloudinary.com/dta8uzpup/image/upload/v1719346276" + item.img}
+                  <Image
+                    src={
+                      "https://res.cloudinary.com/dta8uzpup/image/upload/v1719346276" +
+                      item.img
+                    }
+                    width={100}
+                    height={100}
                     alt='profile'
                     className='h-16 w-16 rounded-full'
                   />
                 </div>
                 <span className='flex flex-col gap-1'>
                   {/* change text color, font-normal to font-bold, text-xl */}
-                  <span className='text-xl font-bold leading-[1.6] text-white'>{item.name}</span>
+                  <span className='text-xl font-bold leading-[1.6] text-white'>
+                    {item.name}
+                  </span>
                   {/* change text color */}
-                  <span className=' text-sm leading-[1.6] text-white-200 font-normal'>{item.title}</span>
+                  <span className=' text-sm leading-[1.6] text-white-200 font-normal'>
+                    {item.title}
+                  </span>
                 </span>
               </div>
             </blockquote>

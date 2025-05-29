@@ -10,7 +10,6 @@ const Hero = () => {
       <div className='flex justify-center relative my-20 z-10'>
         <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
           {/* <AnimatedShinyTextDemo text={"Hack with us at Aurora 2024"} link='https://aurora.elixircommunity.in/' /> */}
-
           <TextGenerateEffect
             words='Transforming people into experienced developers'
             className='text-center text-3xl md:text-4xl lg:text-6xl'
