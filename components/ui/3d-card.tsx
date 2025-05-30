@@ -127,7 +127,7 @@ export const CardItem = <T extends ElementType = "div">({
 }: CardItemProps<T> &
   Omit<ComponentPropsWithRef<T>, keyof CardItemProps<T>>) => {
   const Tag = as || "div";
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
@@ -150,7 +150,7 @@ export const CardItem = <T extends ElementType = "div">({
 
   return (
     <Tag
-      ref={ref}
+    ref={ref}
       className={cn("w-fit transition duration-200 ease-linear", className)}
       {...rest}
     >

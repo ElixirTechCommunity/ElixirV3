@@ -35,14 +35,14 @@ export default function EventsCard({
       <CardBody className="flex flex-col justify-between relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-background/[0.4] dark:border-white/[0.2] border-black/[0.1] w-auto max-w-[20rem] sm:max-w-[20rem] h-auto rounded-xl p-6 border  ">
         <div className="flex justify-between items-center">
           <CardItem
-            translateZ="50"
+            translateZ={50}
             className="text-xl font-bold text-neutral-600 dark:text-white"
           >
             {title}
           </CardItem>
           {/* Event organizing club logo */}
           <CardItem
-            translateZ="50"
+            translateZ={50}
             className="text-neutral-500 dark:text-white"
           >
             <div className="flex items-center gap-3">
@@ -58,7 +58,7 @@ export default function EventsCard({
           </CardItem>
         </div>
         <CardItem
-          translateZ="100"
+          translateZ={50}
           className="my-4 self-center justify-self-center"
         >
           <Image
@@ -72,7 +72,7 @@ export default function EventsCard({
         </CardItem>
         <CardItem
           as="p"
-          translateZ="60"
+          translateZ={60}
           className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-3"
         >
           {description}
