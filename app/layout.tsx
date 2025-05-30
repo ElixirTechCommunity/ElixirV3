@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
-import ClientAppLayout from "@/layouts/ClientAppLayout";
 import { ThemeProvider } from "./provider";
 import { Toaster } from "@/components/ui/toaster";
+import dynamic from "next/dynamic";
+
+const ClientAppLayout = dynamic(() => import("@/layouts/ClientAppLayout"), {
+  ssr: false,
+});
 
 const inter = Inter({ subsets: ["latin"] });
 

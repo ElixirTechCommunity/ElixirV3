@@ -162,13 +162,13 @@ export const testimonials = [
     title: "Batch 2026",
     img: "/mentors/satyam.png",
   },
-  {
-    quote:
-      "Since 2021, Elixir has been instrumental in my personal growth through tech upscaling and peer learning. The community's diverse expertise encourages open discussions and mentorship, creating a hub of motivation. Our collaborative spirit sets us apart, as we strive for collective growth and host impactful events that leave a lasting impression.",
-    name: "Abhinav Jha",
-    title: "Batch 2025",
-    img: "/mentors/abhinav.png",
-  },
+  // {
+  //   quote:
+  //     "Since 2021, Elixir has been instrumental in my personal growth through tech upscaling and peer learning. The community's diverse expertise encourages open discussions and mentorship, creating a hub of motivation. Our collaborative spirit sets us apart, as we strive for collective growth and host impactful events that leave a lasting impression.",
+  //   name: "Abhinav Jha",
+  //   title: "Batch 2025",
+  //   img: "/mentors/abhinav.png",
+  // },
   {
     quote:
       "Since 2020, Elixir has been more than a network; it's a supportive community that felt like family throughout college. I played a role in reviving our Discord server, enjoying enriching discussions and launching our website. Elixir stands out for nurturing growth without judgment. Introducing regular game nights on Discord would further enhance our community, making it even more engaging and enjoyable for everyone involved.",

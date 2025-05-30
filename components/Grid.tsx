@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { WobbleCard } from "./ui/wobble-card";
 import Image from "next/image";

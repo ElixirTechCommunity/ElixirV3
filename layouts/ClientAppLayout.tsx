@@ -1,10 +1,13 @@
 "use client";
-import Footer from "@/components/Footer";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { Provider } from "react-redux";
 import appStore from "@/store/store";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
+
 import { navItems } from "@/data";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("@/components/Footer"));
+const FloatingNav = dynamic(() => import("@/components/ui/FloatingNavbar"));
 
 function BackDrop() {
   return (

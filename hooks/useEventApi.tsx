@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { EVENT_API } from "@/constants/constants";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,20 +9,20 @@ const useEventApi = () => {
   const dispatch = useDispatch();
   const events = useSelector((store: any) => store?.event?.events);
 
-  const fetchevents = useCallback(async () => {
-    try {
-      const events = await axios.get(EVENT_API);
-      dispatch(addEvents(events.data));
-    } catch (err) {
-      console.log(err);
-    }
-  }, [dispatch]);
-
   useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const res = await axios.get(EVENT_API);
+        dispatch(addEvents(res.data));
+      } catch (err) {
+        console.error("Failed to fetch events", err);
+      }
+    };
+
     if (!events || events.length === 0) {
-      fetchevents(); // It only runs when the component using this hook mounts
+      fetchEvents();
     }
-  }, [fetchevents,events]);
+  }, [dispatch, events]);
 };
 
 export default useEventApi;

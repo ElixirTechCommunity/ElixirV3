@@ -1,25 +1,25 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "target": "ES2017", // Required for top-level await
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Necessary libraries
+    "allowJs": true, // Allow using .js files in the project
+    "skipLibCheck": true, // Skip type checks on node_modules
+    "strict": true, // Enable all strict type checking options
+    "noEmit": true, // Don't emit compiled files (Next.js handles this)
+    "esModuleInterop": true, // Enables `import fs from 'fs'` style
+    "module": "ESNext", // Latest module syntax
+    "moduleResolution": "Bundler", // Aligns with how Next.js bundles files
+    "resolveJsonModule": true, // Lets you import JSON as modules
+    "isolatedModules": true, // Needed for transpiling each file in isolation
+    "jsx": "preserve", // Let Next.js handle JSX transforms
+    "incremental": true, // Speeds up rebuilds
+    "baseUrl": ".", // Required for path aliases
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"] // Allow `@/` import aliasing
+    },
+    "plugins": [
+      { "name": "next" } // Supports Next.js-specific TS features
+    ]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
