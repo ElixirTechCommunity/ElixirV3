@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { Toaster } from "@/components/ui/toaster";
 import dynamic from "next/dynamic";
 
-const ClientWrapperLayout = dynamic(
-  () => import("@/layouts/ClientWrapperLayout/ClientWrapperLayout"),
+const ServerWrapperLayout = dynamic(
+  () => import("@/layouts/WrapperLayout/Server/ServerWrapperLayout"),
   {
     ssr: true,
   }
 );
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -41,15 +41,14 @@ export default function RootLayout({
         />
         <meta property="og:image" content="/public/HomeScreen.webp" />
       </head>
-      <body className={inter.className}>
+      <body className={dmSans.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
           disableTransitionOnChange
         >
           <Toaster />
-          <ClientWrapperLayout>{children}</ClientWrapperLayout>
+          <ServerWrapperLayout>{children}</ServerWrapperLayout>
         </ThemeProvider>
       </body>
     </html>

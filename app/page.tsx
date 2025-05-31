@@ -7,7 +7,7 @@ import HeroLogo from "@/public/Elixir-logo.webp";
 async function Home() {
   return (
     <div className="max-w-7xl relative z-10 w-full -mt-10">
-      <div className="hidden md:block absolute -rotate-12 top-96 -right-16 z-10">
+      <div className="hidden md:block absolute -rotate-12 top-96 -right-0 z-10">
         <Image
           src={HeroLogo}
           height={300}

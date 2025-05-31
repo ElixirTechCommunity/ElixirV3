@@ -6,8 +6,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-    <footer className="w-full pt-20 pb-10" id="contact">
+    <footer className="w-full relative" id="contact">
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw] text-lg">
           Ready to take <span className="text-purple">your</span> skills to the
@@ -29,9 +28,7 @@ const Footer = () => {
           />
         </a>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-sm text-xs md:font-normal font-light">
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
+      <div className="flex mt-16 md:flex-row flex-col justify-between items-center px-10 pb-10">
         <p className="md:text-sm text-xs md:font-normal font-light">
           Copyright © 2024 Elixir Tech Community
         </p>
@@ -57,17 +54,6 @@ const Footer = () => {
             </a>
           ))}
         </div>
-      </div>
-      {/* background grid */}
-      <div className="w-full absolute left-0 bottom-0 min-h-96 -z-10">
-        <Image
-          src="/footer-grid.svg"
-          alt="Footer background grid"
-          className="w-full h-full  opacity-50"
-          loading="lazy"
-          width={20}
-          height={20}
-        />
       </div>
     </footer>
   );
