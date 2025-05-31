@@ -3,7 +3,7 @@ import { testimonials } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import styles from "./layouts.module.css";
 import Image from "next/image";
-import Image from "next/image";
+
 const TestimonialsPageLayout = () => {
   return (
     <div className="pt-20 relative z-10">
@@ -17,13 +17,6 @@ const TestimonialsPageLayout = () => {
           style={{ gap: "3rem", padding: "4rem 0" }}
         >
           {testimonials.map((item, idx) => (
-            <li
-              className={cn(
-                "rounded-2xl border border-slate-800 p-5 md:p-16 ",
-                styles.testimonials
-              )}
-              key={idx}
-            >
             <li
               className={cn(
                 "rounded-2xl border border-slate-800 p-5 md:p-16 ",

@@ -11,15 +11,8 @@ const Hero = () => {
           <TextGenerateEffect
             words="Transforming people into experienced developers"
             className="text-center text-3xl md:text-4xl lg:text-6xl"
-            words="Transforming people into experienced developers"
-            className="text-center text-3xl md:text-4xl lg:text-6xl"
           />
-          <a href="http://dsc.gg/elixirtechcommunity" target="_blank">
-            <MagicButton
-              title="Join Discord"
-              icon={<FaDiscord size={20} />}
-              position="right"
-            />
+
           <a href="http://dsc.gg/elixirtechcommunity" target="_blank">
             <MagicButton
               title="Join Discord"

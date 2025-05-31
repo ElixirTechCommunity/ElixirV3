@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import React, { memo } from "react";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const PageHeading = ({
