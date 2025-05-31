@@ -1,5 +1,5 @@
 import PageHeading from "@/components/PageHeading";
-import { testimonials } from "@/data";
+import { testimonials } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import styles from "./layouts.module.css";
 import Image from "next/image";

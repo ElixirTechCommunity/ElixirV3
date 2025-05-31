@@ -1,9 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import eventReducer from "./slices/eventSlice";
-const appStore = configureStore({
-  reducer: {
-    event: eventReducer,
-  },
-});
+import appDataReducer from "./slices/appDataSlice";
+
+export const createStore = (preloadedState = {}) => {
+  return configureStore({
+    reducer: {
+      event: eventReducer,
+      appData: appDataReducer,
+    },
+    preloadedState,
+  });
+};
+
+const appStore = createStore();
 
 export default appStore;

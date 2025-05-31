@@ -46,7 +46,7 @@ export default function EventsCard({
             className="text-neutral-500 dark:text-white"
           >
             <div className="flex items-center gap-3">
-              <Image
+              <img
                 src={clubImage}
                 height={25}
                 width={25}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Chapters } from "@/data";
+import { Chapters } from "@/constants/constants";
 import { PinContainer } from "./ui/Pin";
 import Image from "next/image";
 import Link from "next/link";

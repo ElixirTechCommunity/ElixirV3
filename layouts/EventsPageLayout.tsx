@@ -31,7 +31,7 @@ const EventsPageLayout = () => {
               eventName={event.name}
               eventImage={event.img_link}
               clubName={event.club}
-              clubImage="https://via.placeholder.com/25"
+              clubImage="https://placehold.co/50/png"
               deadline={event.date}
               formLink={event.form_link}
             />
