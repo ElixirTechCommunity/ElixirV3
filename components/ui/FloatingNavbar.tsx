@@ -69,7 +69,7 @@ const FloatingNavbar: React.FC<Props> = ({ navItems, className }) => {
             duration: 0.2,
           }}
           className={cn(
-            "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] lg:top-10 top-5 inset-x-0 mx-auto px-8 py-5 rounded-lg border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-between",
+            "flex max-w-fit md:min-w-[70vw] lg:min-w-fit fixed z-[5000] lg:top-10 top-5 inset-x-0 mx-auto  px-4 py-1 md:px-8 md:py-3 rounded-sm md:rounded-lg border-black/.1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-between",
             className
           )}
           style={{
@@ -84,32 +84,32 @@ const FloatingNavbar: React.FC<Props> = ({ navItems, className }) => {
             willChange: "transform, opacity",
           }}
         >
-        {/* Elixir text on the left */}
+          {/* Elixir text on the left */}
           <motion.div
             animate={{
               scale: isScrolled ? 0.95 : 1,
               x: isScrolled ? 10 : 0,
-            marginRight: isScrolled ? 48 : 224,
+              marginRight: isScrolled ? 48 : 224,
             }}
             transition={{
               duration: 0.22,
-              ease: [0.420, 0.000, 0.580, 1.000],
+              ease: [0.42, 0.0, 0.58, 1.0],
             }}
             className={cn(
               "flex items-center gap-2 text-white font-bold text-xl transition-all duration-400",
-            isScrolled ? "mr-12" : "mr-56"
+              isScrolled ? "mr-12" : "mr-56"
             )}
             style={{ willChange: "transform, opacity, margin-right" }}
           >
-            <Image
-              src="/Elixir-logo.png"
+            {/* <Image
+              src="/Elixir-logo.webp"
               alt="Elixir Logo"
               width={28}
               height={28}
               className="rounded-md mr-2"
               style={{ objectFit: "contain" }}
-            />
-            <span>Elixir</span>
+            /> */}
+            <span className="font-light ">E L I X I R</span>
           </motion.div>
           {/* Hamburger icon for mobile */}
           <div className="md:hidden flex items-center ml-auto">
@@ -129,7 +129,7 @@ const FloatingNavbar: React.FC<Props> = ({ navItems, className }) => {
             }}
             transition={{
               duration: 0.22,
-              ease: [0.420, 0.000, 0.580, 1.000],
+              ease: [0.42, 0.0, 0.58, 1.0],
             }}
             className="hidden md:flex items-center space-x-4"
             style={{ willChange: "transform, opacity" }}
@@ -166,7 +166,7 @@ const FloatingNavbar: React.FC<Props> = ({ navItems, className }) => {
             whileTap={{ scale: 0.95 }}
             transition={{
               duration: 0.22,
-              ease: [0.420, 0.000, 0.580, 1.000],
+              ease: [0.42, 0.0, 0.58, 1.0],
             }}
             className={cn(
               "hidden md:flex border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-white px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-400",
@@ -202,7 +202,7 @@ const FloatingNavbar: React.FC<Props> = ({ navItems, className }) => {
               }}
               transition={{
                 duration: 0.22,
-                ease: [0.420, 0.000, 0.580, 1.000],
+                ease: [0.42, 0.0, 0.58, 1.0],
               }}
               className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px"
               style={{ willChange: "transform, opacity" }}
