@@ -31,11 +31,11 @@ const EventsPageLayout = () => {
               eventName={event.name}
               eventImage={event.img_link}
               clubName={event.club}
-              clubImage="https://placehold.co/50/png"
+              clubImage="https://via.placeholder.com/25"
               deadline={event.date}
               formLink={event.form_link}
             />
-          ))}
+           ))} 
         </div>
       </div>
     </div>
