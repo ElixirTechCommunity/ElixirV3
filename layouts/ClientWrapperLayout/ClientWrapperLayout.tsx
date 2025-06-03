@@ -3,7 +3,7 @@ import { Spotlight } from "@/components/ui/Spotlight";
 import { Provider } from "react-redux";
 import appStore from "@/store/store";
 
-import { navItems } from "@/data";
+import { navItems } from "@/constants/constants";
 import dynamic from "next/dynamic";
 
 const Footer = dynamic(() => import("@/components/Footer"));
