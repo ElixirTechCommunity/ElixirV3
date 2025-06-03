@@ -68,7 +68,7 @@ const MobileNavModal: React.FC<MobileNavModalProps> = ({
             <div className="w-full flex items-center justify-between mb-4 mt-1 select-none">
               <div className="flex items-center gap-2">
                 <Image
-                  src="/Elixir-logo.webp"
+                  src="/Elixir-logo.png"
                   alt="Elixir Logo"
                   width={28}
                   height={28}
@@ -76,7 +76,7 @@ const MobileNavModal: React.FC<MobileNavModalProps> = ({
                   style={{ objectFit: "contain" }}
                 />
                 <span className="text-white font-semibold text-lg tracking-tight">
-                  E L I X I R
+                  Elixir
                 </span>
               </div>
               <button
