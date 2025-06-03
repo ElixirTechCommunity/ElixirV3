@@ -60,47 +60,40 @@ export default function EventsCard({
   };
   const images = [" "];
   return (
+      <Modal>
     <CardContainer className="inter-var">
-      <CardBody className="flex flex-col justify-between relative group/card  hover:shadow-2xl hover:shadow-emerald-500/[0.1] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-background/[0.4] dark:border-white/[0.2] border-black/[0.1] w-auto max-w-[20rem] sm:max-w-[20rem] h-auto rounded-xl p-6 border  ">
-        <div className="flex justify-between items-center">
-          <CardItem
-            translateZ={50}
-            className="text-xl font-bold text-neutral-600 dark:text-white"
-          >
-            {title}
+      <CardBody className="flex flex-col justify-between relative  hover:shadow-2xl hover:shadow-emerald-500/[0.1] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-background/[0.4] dark:border-white/[0.2] border-black/[0.1] w-auto max-w-[20rem] sm:max-w-[36rem] max-h-[16rem] rounded-xl p-6 border  ">
+        <div className="flex gap-4">
+          <CardItem translateZ={50} className="mb-2  relative">
+            {tagsMap[getEventTimeLine(deadline)]}
+            <Image
+              src={eventImage}
+              height="200"
+              width="200"
+              className="min-w-24 object-contain aspect-square rounded-xl group-hover/card:shadow-xl"
+              alt={eventName}
+              loading="lazy"
+            />
           </CardItem>
-          {/* Event organizing club logo */}
-          <CardItem
-            translateZ={50}
-            className="text-neutral-500 dark:text-white"
-          >
-            <div className="flex items-center gap-3">
-              <img
-                src={clubImage}
-                height={25}
-                width={25}
-                className="rounded-full object-cover aspect-[1/1] border-2 p-0 border-white ml-3"
-                alt={clubName}
-                loading="lazy"
-              />
-            </CardItem>
-            <div>
-              <div className="flex justify-between items-center">
-                <CardItem
-                  translateZ={50}
-                  className="text-xl font-bold text-neutral-600 dark:text-white"
-                >
-                  {title}
-                </CardItem>
-              </div>
+          <div>
+            <div className="flex justify-between items-center">
 
               <CardItem
-                as="p"
-                translateZ={60}
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-2"
+                translateZ={50}
+                className="text-xl font-bold text-neutral-600 dark:text-white"
               >
-                {description}
+                {title}
               </CardItem>
+            </div>
+
+            <CardItem
+              as="p"
+              translateZ={60}
+              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-2"
+            >
+              {description}
+            </CardItem>
+
               <div className="">
                 <div className="w-full h-0.5 bg-neutral-200 dark:bg-neutral-700 mt-4" />
                 <div className=" flex justify-between items-center mt-5">
@@ -133,7 +126,7 @@ export default function EventsCard({
             <div className="flex justify-center pr-10 mr-10 items-center">
               {images.map((idx) => (
                 <motion.div
-                  key={"images" + idx}
+                  key={eventName}
                   style={{
                     rotate: Math.random() * 20 - 10,
                   }}
