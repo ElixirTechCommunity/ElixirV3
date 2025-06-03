@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo } from "react";
+import React , { memo } from "react";
 
 import { companies, testimonials } from "@/constants/constants";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";

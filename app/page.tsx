@@ -7,17 +7,15 @@ import HeroLogo from "@/public/Elixir-logo.webp";
 async function Home() {
   return (
     <div className="max-w-7xl relative z-10 w-full -mt-10">
-      <div className="hidden md:block absolute -rotate-12 top-96 -right-16 z-10">
+      <motion.div className="hidden  md:block absolute -rotate-12 top-96 -right-16  z-10 ">
         <Image
-          src={HeroLogo}
+          src={LogoHero}
           height={300}
           width={300}
-          alt="Elixir Logo"
+          alt="tect"
           className="rounded-md"
-          priority
-          quality={90}
         />
-      </div>
+      </motion.div>
       <Hero />
       <ChapterSection />
       <Testimonials />
