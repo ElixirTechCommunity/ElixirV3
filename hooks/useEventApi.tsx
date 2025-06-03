@@ -23,6 +23,8 @@ const useEventApi = () => {
       fetchEvents();
     }
   }, [dispatch, events]);
+
+  return { events };
 };
 
 export default useEventApi;
