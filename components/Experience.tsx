@@ -30,16 +30,14 @@ const Experience = () => {
 
               borderRadius: `calc(1.75rem* 0.96)`,
             }}
-            // remove bg-white dark:bg-slate-900
-            className='flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800'
+            className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
           >
-            <div className='flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2'>
+            <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <Image
                 src={card.thumbnail}
-                alt={card.thumbnail}
-                width={100}
-                height={100}
-                className='lg:w-32 md:w-20 w-16'
+                alt={card.title}
+                className="lg:w-32 md:w-20 w-16 object-contain"
+                loading="lazy"
               />
               <div className='lg:ms-5'>
                 <h1 className='text-start text-xl md:text-2xl font-bold'>

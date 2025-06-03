@@ -6,14 +6,14 @@ import Image from "next/image";
 import Image from "next/image";
 const TestimonialsPageLayout = () => {
   return (
-    <div className='pt-20 relative z-10'>
-      <div className='flex flex-col items-center justify-center'>
+    <div className="pt-20 relative z-10">
+      <div className="flex flex-col items-center justify-center">
         <PageHeading
-          smallHeading='Members'
-          longHeading='LISTEN TO OUR MEMBERS'
+          smallHeading="Members"
+          longHeading="LISTEN TO OUR MEMBERS"
         />
         <ul
-          className='flex items-center justify-center flex-wrap '
+          className="flex items-center justify-center flex-wrap "
           style={{ gap: "3rem", padding: "4rem 0" }}
         >
           {testimonials.map((item, idx) => (
@@ -35,26 +35,23 @@ const TestimonialsPageLayout = () => {
                 <span className=" relative z-20 text-sm md:text-base leading-[1.6] text-white font-normal">
                   {item.quote}
                 </span>
-                <div className='relative z-20 mt-6 flex flex-row items-center'>
-                  {/* add this div for the profile img */}
-                  <div className='me-3 h-16 w-16 rounded-full overflow-hidden'>
+                <div className="relative z-20 mt-6 flex flex-row items-center">
+                  <div className="me-3 h-16 w-16 rounded-full overflow-hidden">
                     <Image
                       src={
                         "https://res.cloudinary.com/dta8uzpup/image/upload/v1719346276" +
                         item.img
                       }
-                      alt='profile'
-                      height={64}
-                      width={64}
+                      alt="profile"
+                      loading="lazy"
                     />
                   </div>
-                  <span className='flex flex-col gap-1'>
-                    {/* change text color, font-normal to font-bold, text-xl */}
-                    <span className='text-xl font-bold leading-[1.6] text-white'>
+                  <span className="flex flex-col gap-1">
+                    <span className="text-xl font-bold leading-[1.6] text-white">
                       {item.name}
                     </span>
-                    {/* change text color */}
-                    <span className=' text-sm leading-[1.6] text-white-200 font-normal'>
+
+                    <span className=" text-sm leading-[1.6] text-white-200 font-normal">
                       {item.title}
                     </span>
                   </span>
