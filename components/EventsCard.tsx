@@ -12,7 +12,7 @@ import { CardContainer, CardBody, CardItem } from "./ui/3d-card";
 import { IconClock } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export interface EventsCardProps {
   title: string;
