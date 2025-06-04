@@ -122,7 +122,7 @@ export default function EventsCard({
       {/* ======================================================Modal Container========================================= */}
       <ModalBody>
         <ModalContent>
-          <div className="styles.container">
+          <div className={styles.container}>
             {/* part 1 -> image container */}
             <div className="flex justify-center pr-10 mr-10 items-center">
               {images.map((idx) => (
