@@ -9,6 +9,13 @@
   width: 22rem;
   height: 25rem;
 }
+/* ============EventCard================== */
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
 @media screen and (min-width: 768px) {
   .formContainer {
     width: 50%;
@@ -16,5 +23,11 @@
   .testimonials {
     width: 30rem;
     height: 26rem;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
   }
 }

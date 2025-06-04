@@ -13,6 +13,7 @@ import { IconClock } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import styles from  "layouts/layouts.module.css"
 
 export interface EventsCardProps {
   title: string;
@@ -121,7 +122,7 @@ export default function EventsCard({
       {/* ======================================================Modal Container========================================= */}
       <ModalBody>
         <ModalContent>
-          <div className="flex flex-row items-center justify-around">
+          <div className="styles.container">
             {/* part 1 -> image container */}
             <div className="flex justify-center pr-10 mr-10 items-center">
               {images.map((idx) => (
@@ -147,7 +148,7 @@ export default function EventsCard({
                     src={eventImage}
                     height="200"
                     width="200"
-                    className="min-w-24 object-contain aspect-square rounded-xl group-hover/card:shadow-xl"
+                    className="styles.eventimage min-w-15 object-contain aspect-square rounded-xl group-hover/card:shadow-xl"
                     alt={eventName}
                     loading="lazy"
                   />
