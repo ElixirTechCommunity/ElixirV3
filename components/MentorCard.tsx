@@ -19,10 +19,10 @@ const MentorCard = ({ data }: { data: any }) => {
           }
           alt={data.name}
           fill
-          className="object-cover transition-all duration-700 group-hover:scale-105"
+          className="object-cover transition-all duration-700 group-hover:scale-105 pointer-events-none"
         />
         {/* gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-80 pointer-events-none" />
       </div>
 
       {/* Content overlay */}
@@ -92,7 +92,7 @@ const MentorCard = ({ data }: { data: any }) => {
       </div>
 
       {/* hover effect */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/20 group-hover:via-black/10 group-hover:to-black/20 transition-all duration-700" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/20 group-hover:via-black/10 group-hover:to-black/20 transition-all duration-700 pointer-events-none" />
     </motion.div>
   );
 };
