@@ -13,7 +13,7 @@ import { IconClock } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import styles from  "layouts/layouts.module.css"
+import styles from "layouts/layouts.module.css";
 
 export interface EventsCardProps {
   title: string;
@@ -59,58 +59,93 @@ export default function EventsCard({
       </div>
     ),
   };
-  const images = [" "];
+  // const images = [" "];
   return (
-      <Modal>
-    <CardContainer className="inter-var">
-      <CardBody className="flex flex-col justify-between relative  hover:shadow-2xl hover:shadow-emerald-500/[0.1] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-background/[0.4] dark:border-white/[0.2] border-black/[0.1] w-auto max-w-[20rem] sm:max-w-[36rem] max-h-[16rem] rounded-xl p-6 border  ">
-        <div className="flex gap-4">
-          <CardItem translateZ={50} className="mb-2  relative">
-            {tagsMap[getEventTimeLine(deadline)]}
-            <Image
-              src={eventImage}
-              height="200"
-              width="200"
-              className="min-w-24 object-contain aspect-square rounded-xl group-hover/card:shadow-xl"
-              alt={eventName}
-              loading="lazy"
-            />
-          </CardItem>
-          <div>
-            <div className="flex justify-between items-center">
+    <Modal>
+      <CardContainer className="inter-var">
+        <CardBody className="flex flex-col justify-between relative  hover:shadow-2xl hover:shadow-emerald-500/[0.1] dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-background/[0.4] dark:border-white/[0.2] border-black/[0.1] w-auto max-w-[20rem] sm:max-w-[36rem] max-h-[16rem] rounded-xl p-6 border  ">
+          <div className="flex gap-4">
+            <CardItem
+              translateZ={50}
+              className="flex justify-center items-center m-2  relative"
+            >
+              {tagsMap[getEventTimeLine(deadline)]}
+              <Image
+                src={eventImage}
+                height="200"
+                width="200"
+                className="min-w-24 object-contain aspect-square rounded-xl group-hover/card:shadow-xl"
+                alt={eventName}
+                loading="lazy"
+              />
+            </CardItem>
+            <div>
+              <div className="flex justify-between items-center">
+                <CardItem
+                  translateZ={50}
+                  className="text-lg font-bold text-neutral-600 dark:text-white"
+                >
+                  {title}
+                </CardItem>
+                {/* Event organizing club logo */}
+                <CardItem
+                  translateZ={50}
+                  className="text-neutral-500 dark:text-white"
+                >
+                  <div className="flex items-center">
+                    <Image
+                      src={clubImage}
+                      height={30}
+                      width={32}
+                      className="rounded-full object-cover aspect-[1/1] border-2 p-0 border-white ml-3"
+                      alt={clubName}
+                    />
+                  </div>
+                </CardItem>
+              </div>
 
               <CardItem
-                translateZ={50}
-                className="text-xl font-bold text-neutral-600 dark:text-white"
+                as="p"
+                translateZ={60}
+                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-3"
               >
-                {title}
+                {description}
               </CardItem>
-            </div>
 
-            <CardItem
-              as="p"
-              translateZ={60}
-              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-2"
-            >
-              {description}
-            </CardItem>
-
+              <CardItem
+                translateZ={20}
+                className="py-1 flex items-center gap-2 rounded-xl text-xs font-normal dark:text-white"
+              >
+                {isOver(deadline) ? (
+                  <div className="flex items-center text-md mt-2 dark:text-white w-max">
+                    <IconClock size={18} />
+                    <p>{String(deadline)}</p>
+                  </div>
+                ) : null}
+              </CardItem>
               <div className="">
-                <div className="w-full h-0.5 bg-neutral-200 dark:bg-neutral-700 mt-4" />
-                <div className=" flex justify-between items-center mt-5">
+                <div className="w-full h-0.5 bg-neutral-200 dark:bg-neutral-700 mt-1" />
+                <div className=" flex justify-between items-center mt-4">
                   <CardItem
                     translateZ={20}
                     // as="button"
                     className="rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs cursor-pointer font-bold hover:bg-neutral-800 dark:hover:bg-neutral-300 transition-colors duration-200"
                   >
-                    <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center group/modal-btn">
-                      <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
-                        View Details
-                      </span>
-                      <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-black z-20">
-                        Click😗
+                    {isOver(deadline) ? (
+                          <div className="bg-black dark:bg-white dark:text-black text-white flex justify-center p-2 rounded-full">
+                            Registration closed
+                          </div>
+                    ) : (
+                      // <Link href={formLink} target="about_blank">
+                      <div>
+                        <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center">
+                          <div className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
+                            View Details
+                          </div>
+                        </ModalTrigger>
                       </div>
-                    </ModalTrigger>
+                      // </Link>
+                    )}
                   </CardItem>
                 </div>
               </div>
@@ -120,40 +155,30 @@ export default function EventsCard({
       </CardContainer>
 
       {/* ======================================================Modal Container========================================= */}
-      <ModalBody>
+      <ModalBody className="overflow-y-scroll no-scrollbar">
         <ModalContent>
           <div className={styles.container}>
             {/* part 1 -> image container */}
-            <div className="flex justify-center pr-10 mr-10 items-center">
-              {images.map((idx) => (
-                <motion.div
-                  key={eventName}
-                  style={{
-                    rotate: Math.random() * 20 - 10,
-                  }}
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: 0,
-                    zIndex: 100,
-                  }}
-                  whileTap={{
-                    scale: 1.1,
-                    rotate: 0,
-                    zIndex: 100,
-                  }}
-                  className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
-                >
-                  {tagsMap[getEventTimeLine(deadline)]}
-                  <Image
-                    src={eventImage}
-                    height="200"
-                    width="200"
-                    className="styles.eventimage min-w-15 object-contain aspect-square rounded-xl group-hover/card:shadow-xl"
-                    alt={eventName}
-                    loading="lazy"
-                  />
-                </motion.div>
-              ))}
+            <div className="flex justify-center pr-10 mr-5 items-center relative">
+              {/* {images.map((idx) => ( */}
+              <motion.div
+                key={eventName}
+                style={{
+                  rotate: Math.random() * 0.3 - 0.25,
+                }}
+                className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
+              >
+                {tagsMap[getEventTimeLine(deadline)]}
+                <Image
+                  src={eventImage}
+                  height="200"
+                  width="200"
+                  className="min-w-15 object-contain aspect-square rounded-xl group-hover/card:shadow-xl"
+                  alt={eventName}
+                  loading="lazy"
+                />
+              </motion.div>
+              {/* ))} */}
             </div>
 
             {/* part-2 -> details container */}
@@ -167,26 +192,26 @@ export default function EventsCard({
               {/* divider */}
               <div className="w-full h-0.5 bg-neutral-200 dark:bg-neutral-700 mt-4" />
               {/* description */}
-              <div className="text-neutral-500 mt-5 text-md max-w-sm mt-2 dark:text-neutral-300 ">
+              <div className="text-neutral-500 mt-5 text-md max-w-sm mt-2 dark:text-neutral-300">
                 <span className="font-bold text-neutral-800 dark:text-neutral-200">
                   Description:{" "}
                 </span>
                 {description}
               </div>
-                {/* last date */}
-                <div className="flex items-center rounded-xl text-md font-normal dark:text-white">
-              {isOver(deadline) ? null : (
+              {/* last date */}
+              <div className="flex items-center rounded-xl text-md font-normal dark:text-white">
+                {/* {isOver(deadline) ? null : ( */}
                 <div className="flex items-center gap-2 text-md mt-5 dark:text-white w-max">
                   <p>Last date: {String(deadline)}</p>
                 </div>
-              )}
+                {/* )} */}
               </div>
             </div>
           </div>
         </ModalContent>
         <ModalFooter className="gap-4">
           {/* register button */}
-          <div className=" flex flex-1 justify-between items-center mt-5">
+          <div className=" flex flex-1 justify-between items-center mt-1">
             {/* Event organizing club logo */}
             <div className="text-neutral-500 dark:text-white">
               <div className="flex items-center gap-3">
@@ -194,24 +219,20 @@ export default function EventsCard({
                   src={clubImage}
                   height={25}
                   width={45}
-                  className="object-cover aspect-[1/1] border-2 p-0 border-white ml-3"
+                  className="rounded-full object-cover aspect-[1/1] border-2 p-0 border-white ml-3"
                   alt={clubName}
                   loading="lazy"
                 />
               </div>
             </div>
-            <div className="px-4 py-2 flex items-center gap-2 rounded-xl text-xs font-normal dark:text-white">
-              {isOver(deadline) ? (
+            <div className="px-4 py-2 flex items-center gap-2 rounded-xl font-normal dark:text-white">
+              {/* {isOver(deadline) ? null : ( */}
+              <Link href={formLink} target="about_blank">
                 <div className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs cursor-pointer font-bold hover:bg-neutral-800 dark:hover:bg-neutral-300 transition-colors duration-200">
-                    Registration closed
-                  </div>
-              ) : (
-                <Link href={formLink} target="about_blank">
-                  <div className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs cursor-pointer font-bold hover:bg-neutral-800 dark:hover:bg-neutral-300 transition-colors duration-200">
-                    Register
-                  </div>
-                </Link>
-              )}
+                  Register
+                </div>
+              </Link>
+              {/* )} */}
             </div>
           </div>
         </ModalFooter>
