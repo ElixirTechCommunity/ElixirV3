@@ -107,14 +107,14 @@ export default function EventsCard({
               <CardItem
                 as="p"
                 translateZ={60}
-                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-3"
+                className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300 line-clamp-2"
               >
                 {description}
               </CardItem>
 
               <CardItem
                 translateZ={20}
-                className="py-1 flex items-center gap-2 rounded-xl text-xs font-normal dark:text-white"
+                className="py-1 flex items-center gap-2 rounded-xl text-xs font-normal dark:text-white mb-2"
               >
                 {isOver(deadline) ? (
                   <div className="flex items-center text-md mt-2 dark:text-white w-max">
@@ -124,22 +124,22 @@ export default function EventsCard({
                 ) : null}
               </CardItem>
               <div className="">
-                <div className="w-full h-0.5 bg-neutral-200 dark:bg-neutral-700 mt-1" />
-                <div className=" flex justify-between items-center mt-4">
+                <div className="w-full h-0.5 bg-neutral-200 dark:bg-neutral-700" />
+                <div className=" flex justify-between items-center mt-3">
                   <CardItem
                     translateZ={20}
                     // as="button"
-                    className="rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs cursor-pointer font-bold hover:bg-neutral-800 dark:hover:bg-neutral-300 transition-colors duration-200"
+                    // className="bg-transparent hover:bg-blue-600 text-white-700 font-semibold hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded"
                   >
                     {isOver(deadline) ? (
-                          <div className="bg-black dark:bg-white dark:text-black text-white flex justify-center p-2 rounded-full">
-                            Registration closed
-                          </div>
+                      <div className="bg-transparent text-center text-sm text-white-700 font-semibold hover:text-white px-3 py-2 border border-blue-500 rounded">
+                        Registration closed
+                      </div>
                     ) : (
                       // <Link href={formLink} target="about_blank">
                       <div>
-                        <ModalTrigger className="bg-black dark:bg-white dark:text-black text-white flex justify-center">
-                          <div className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
+                        <ModalTrigger>
+                          <div className="bg-transparent text-sm hover:bg-blue-600 text-white-700 font-semibold hover:text-white px-3 py-2 border border-blue-500 hover:border-transparent rounded">
                             View Details
                           </div>
                         </ModalTrigger>
@@ -228,7 +228,7 @@ export default function EventsCard({
             <div className="px-4 py-2 flex items-center gap-2 rounded-xl font-normal dark:text-white">
               {/* {isOver(deadline) ? null : ( */}
               <Link href={formLink} target="about_blank">
-                <div className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs cursor-pointer font-bold hover:bg-neutral-800 dark:hover:bg-neutral-300 transition-colors duration-200">
+                <div className="bg-transparent hover:bg-blue-600 text-white-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                   Register
                 </div>
               </Link>
