@@ -1,6 +1,5 @@
 import Image from "next/image";
-import React from "react";
-import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const MentorCard = ({ data }: { data: any }) => {
@@ -74,20 +73,7 @@ const MentorCard = ({ data }: { data: any }) => {
               <span className="text-sm text-white/90 font-light">Discord</span>
             </motion.a>
           )} */}
-
-          {data.github && (
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href={data.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300"
-            >
-              <FaGithub className="text-gray-300 w-4 h-4" />
-              <span className="text-sm text-white/90 font-light">GitHub</span>
-            </motion.a>
-          )}
+          
         </motion.div>
       </div>
 
