@@ -119,8 +119,30 @@ export default function EventsCard({
               <div className=" flex justify-between items-center mt-3">
                 <CardItem translateZ={20}>
                   {isOver(deadline) ? (
-                    <div className="bg-transparent text-center text-sm text-white-700 font-semibold hover:text-white px-3 py-2 border border-blue-500 rounded">
-                      Registration closed
+                    // <div className="bg-transparent text-center text-sm text-white-700 font-semibold hover:text-white px-3 py-2 border border-blue-500 rounded">
+                    //   Registration closed
+                    // </div>
+                     <div>
+                      <MobileCard
+                        title={title}
+                        description={description}
+                        eventName={eventName}
+                        eventImage={eventImage}
+                        clubName={clubName}
+                        clubImage={clubImage}
+                        deadline={deadline}
+                        formLink={formLink}
+                      />
+                      <ModalCard
+                        title={title}
+                        description={description}
+                        eventName={eventName}
+                        eventImage={eventImage}
+                        clubName={clubName}
+                        clubImage={clubImage}
+                        deadline={deadline}
+                        formLink={formLink}
+                      />
                     </div>
                   ) : (
                     // <Link href={formLink} target="about_blank">
