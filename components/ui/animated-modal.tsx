@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import { createPortal } from "react-dom";
 import React, {
   ReactNode,
   createContext,
@@ -81,7 +82,7 @@ export const ModalBody = ({
   const { setOpen } = useModal();
   useOutsideClick(modalRef, () => setOpen(false));
 
-  return (
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -96,14 +97,14 @@ export const ModalBody = ({
             opacity: 0,
             backdropFilter: "blur(0px)",
           }}
-          className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-full  flex items-center justify-center z-50"
+          className="fixed [perspective:800px] [transform-style:preserve-3d] inset-0 h-full w-auto flex items-center justify-center z-50"
         >
           <Overlay />
 
           <motion.div
             ref={modalRef}
             className={cn(
-              "min-h-[50%] max-h-[70%] md:max-w-[40%] bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden m-10",
+              "min-h-[45%] max-h-[70%] max-w-[45%] mt-10 bg-white dark:bg-neutral-950 border border-transparent dark:border-neutral-800 md:rounded-2xl relative z-50 flex flex-col flex-1 overflow-hidden ",
               className
             )}
             initial={{
@@ -134,7 +135,8 @@ export const ModalBody = ({
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
 
@@ -146,7 +148,7 @@ export const ModalContent = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("flex flex-col flex-1 h-full p-8 md:p-10", className)}>
+    <div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
       {children}
     </div>
   );
@@ -162,7 +164,7 @@ export const ModalFooter = ({
   return (
     <div
       className={cn(
-        "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+        "flex justify-end p-2 bg-gray-100 dark:bg-neutral-900",
         className
       )}
     >
