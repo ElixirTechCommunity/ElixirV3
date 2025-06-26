@@ -1,42 +1,86 @@
 import Image from "next/image";
-import React, { memo } from "react";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const MentorCard = ({ data }: { data: any }) => {
   return (
-    <div className="relative group duration-500 cursor-pointer group overflow-hidden  text-gray-50 h-80 w-64 rounded-2xl hover:duration-700 ">
-      <div className="w-64 h-80 bg-gray-400 text-gray-800">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="relative group w-[320px] h-[420px] rounded-3xl overflow-hidden bg-black"
+    >
+      <div className="absolute inset-0">
         <Image
           src={
             "https://res.cloudinary.com/dta8uzpup/image/upload/v1719346276" +
             data.image
           }
-          width={240}
-          height={320}
           alt={data.name}
-          className="object-cover w-full h-full"
-          priority={false}
-          loading="lazy"
+          fill
+          className="object-cover transition-all duration-700 group-hover:scale-105 pointer-events-none"
         />
+        {/* gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-80 pointer-events-none" />
       </div>
-      <div className="absolute bg-gray-50 -bottom-[105px] h-44 w-64 p-3 flex flex-col  group-hover:-bottom-0 group-hover:duration-600 duration-500">
-        <span className="text-gray-800 font-bold text-xl">{data.name}</span>
 
-        <span className="text-gray-400 text-xs">{data.techStack}</span>
+      {/* Content overlay */}
+      <div className="relative h-full flex flex-col justify-end p-8">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="space-y-2"
+        >
+          <h3 className="text-2xl font-semibold text-white tracking-tight">
+            {data.name}
+          </h3>
+          <p className="text-sm text-gray-300/90 font-light tracking-wide">
+            {data.techStack}
+          </p>
+        </motion.div>
 
-        <div className="my-4 w-full flex items-center justify-between gap-10 ">
-          <a
+        {/* Social links */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="flex items-center gap-4 mt-6"
+        >
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href={data.linkedIn}
             target="_blank"
-            className="px-8 py-2 rounded-md border border-black bg-white text-black-100 text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200 flex items-center gap-1"
+            rel="noopener noreferrer"
+            className="flex items-center cursor-pointer gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300"
           >
-            Linkedin
-            <FaLinkedin color="#0072b1" size={16} />
-          </a>
-        </div>
+            <FaLinkedin className="text-blue-400 w-4 h-4" />
+            <span className="text-sm text-white/90 font-light">LinkedIn</span>
+          </motion.a>
+
+          {/* Hidden for now */}
+          {/* {data.discord && (
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={`https://discord.com/users/${data.discord}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300"
+            >
+              <FaDiscord className="text-indigo-400 w-4 h-4" />
+              <span className="text-sm text-white/90 font-light">Discord</span>
+            </motion.a>
+          )} */}
+          
+        </motion.div>
       </div>
-    </div>
+
+      {/* hover effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-black/0 group-hover:from-black/20 group-hover:via-black/10 group-hover:to-black/20 transition-all duration-700 pointer-events-none" />
+    </motion.div>
   );
 };
 
-export default memo(MentorCard);
+export default MentorCard;
