@@ -35,7 +35,7 @@ const EventsPageLayout = () => {
               deadline={event.date}
               formLink={event.form_link}
             />
-          ))}
+           ))} 
         </div>
       </div>
     </div>

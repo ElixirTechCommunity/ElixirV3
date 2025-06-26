@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import EventsPageLayout from "@/layouts/EventsPageLayout";
+import EventsPageLayout from "@/layouts/EventPageLayout/EventsPageLayout";
 export const metadata: Metadata = {
   title: "Events",
 };
